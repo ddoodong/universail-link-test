@@ -2,9 +2,14 @@
     "applinks": {
         "apps": [],
         "details": [
+			{
+                "appID": "7827Z32S4K.com.starbucks.starbucksKR",
+                "paths": ["*"]            
+			},
             {
-                "appID": "299TQXJ7S5.com.gaeasoft.ssgfoodTest",
-                "paths": ["*"]            }
+                "appID": "2HGLKS6324.com.starbucks.inhouse",
+                "paths": ["*"]            
+			}
         ]
     }
 }
