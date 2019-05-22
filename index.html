@@ -2,7 +2,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     <title>Test Link</title>
     <style type="text/css">
         body {
@@ -26,11 +26,13 @@
         }
         
         th {
-            background: #9cf;
+			border: 1px solid #000;
+            border-collapse: collapse;
+            padding: 2px;
         }
         
-        th,
         td {
+			word-break: break-all;
             border: 1px solid #000;
             border-collapse: collapse;
             padding: 2px;
@@ -43,22 +45,72 @@
     <table>
         <thead>
             <tr>
-                <th scope="col">URL</th>
-                <th scope="col">Link</th>
+                <th background="#9cf" scope="col">URL</th>
+                <th background="#9cf" scope="col">Link</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <td>starbuckskr://deeplink?main=SIREN_ORDER</td>
-                <td><a href="starbuckskr://deeplink?main=SIREN_ORDER">DEEP_LINK</a></td>
+                <th><a href="starbuckskr://deeplink?main=SIREN_ORDER">DEEP_LINK</a></th>
             </tr>
 			<tr>
                 <td>https://starbuckskr.page.link/?link=https%3a%2f%2fwww.istarbucks.co.kr%3fstarbuckskr%3a%2f%2fdeeplink%3fmain%3dSIREN_ORDER&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.starbucksKR</td>
-                <td><a href="https://starbuckskr.page.link/?link=https%3a%2f%2fwww.istarbucks.co.kr%3fstarbuckskr%3a%2f%2fdeeplink%3fmain%3dSIREN_ORDER&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.starbucksKR">APP_STORE</a></td>
+                <th><a href="https://starbuckskr.page.link/?link=https%3a%2f%2fwww.istarbucks.co.kr%3fstarbuckskr%3a%2f%2fdeeplink%3fmain%3dSIREN_ORDER&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.starbucksKR">APP_STORE</a></th>
             </tr>
 			<tr>
                 <td>https://starbuckskr.page.link/?link=https://www.istarbucks.co.kr?starbuckskr%3a%2f%2fdeeplink%3fmain%3dSIREN_ORDER&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.inhouse</td>
-                <td><a href="https://starbuckskr.page.link/?link=https://www.istarbucks.co.kr?starbuckskr%3a%2f%2fdeeplink%3fmain%3dSIREN_ORDER&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.inhouse">INHOUSE</a></td>
+                <th><a href="https://starbuckskr.page.link/?link=https://www.istarbucks.co.kr?starbuckskr%3a%2f%2fdeeplink%3fmain%3dSIREN_ORDER&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.inhouse">INHOUSE</a></th>
+            </tr>
+        </tbody>
+    </table>
+	<br>
+	<br>
+	<h1>e-Gift Shop</h1>
+    <table>
+        <thead>
+            <tr>
+                <th background="#9cf" scope="col">URL</th>
+                <th background="#9cf" scope="col">Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>starbuckskr://deeplink?main=EGIFT_SHOP</td>
+                <th><a href="starbuckskr://deeplink?main=EGIFT_SHOP">DEEP_LINK</a></th>
+            </tr>
+			<tr>
+                <td>https://starbuckskr.page.link/?link=https%3a%2f%2fwww.istarbucks.co.kr%3fstarbuckskr%3a%2f%2fdeeplink%3fmain%3dEGIFT_SHOP&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.starbucksKR</td>
+                <th><a href="https://starbuckskr.page.link/?link=https%3a%2f%2fwww.istarbucks.co.kr%3fstarbuckskr%3a%2f%2fdeeplink%3fmain%3dEGIFT_SHOP&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.starbucksKR">APP_STORE</a></th>
+            </tr>
+			<tr>
+                <td>https://starbuckskr.page.link/?link=https%3a%2f%2fwww.istarbucks.co.kr%3fstarbuckskr%3a%2f%2fdeeplink%3fmain%3dEGIFT_SHOP&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.inhouse</td>
+                <th><a href="https://starbuckskr.page.link/?link=https%3a%2f%2fwww.istarbucks.co.kr%3fstarbuckskr%3a%2f%2fdeeplink%3fmain%3dEGIFT_SHOP&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.inhouse">INHOUSE</a></th>
+            </tr>
+        </tbody>
+    </table>
+	<br>
+	<br>
+	<h1>e-Gift Shop(sub)</h1>
+    <table>
+        <thead>
+            <tr>
+                <th background="#9cf" scope="col">URL</th>
+                <th background="#9cf" scope="col">Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>starbuckskr://deeplink?main=EGIFT_SHOP&sub=RECEIVED_ITEM</td>
+                <th><a href="starbuckskr://deeplink?main=EGIFT_SHOP&sub=RECEIVED_ITEM">DEEP_LINK</a></th>
+            </tr>
+			<tr>
+                <td>https://starbuckskr.page.link/?link=https%3a%2f%2fwww.istarbucks.co.kr%3fstarbuckskr%3a%2f%2fdeeplink%3fmain%3dEGIFT_SHOP&sub=RECEIVED_ITEM&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.starbucksKR</td>
+                <th><a href="https://starbuckskr.page.link/?link=https%3a%2f%2fwww.istarbucks.co.kr%3fstarbuckskr%3a%2f%2fdeeplink%3fmain%3dEGIFT_SHOP&sub=RECEIVED_ITEM&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.starbucksKR">APP_STORE</a></th>
+            </tr>
+			<tr>
+                <td>https://starbuckskr.page.link/?link=https%3a%2f%2fwww.istarbucks.co.kr%3fstarbuckskr%3a%2f%2fdeeplink%3fmain%3dEGIFT_SHOP&sub=RECEIVED_ITEM&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.inhouse</td>
+                <th><a href="https://starbuckskr.page.link/?link=https%3a%2f%2fwww.istarbucks.co.kr%3fstarbuckskr%3a%2f%2fdeeplink%3fmain%3dEGIFT_SHOP&sub=RECEIVED_ITEM&apn=com.starbucks.co&isi=466682252&ibi=com.starbucks.inhouse">INHOUSE</a></th>
             </tr>
         </tbody>
     </table>
