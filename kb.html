@@ -1,0 +1,113 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="format-detection" content="telephone=no, email=no, address=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,target-densitydpi=device-dpi">
+    <title>KB 본인인증</title>
+    <link rel="stylesheet" href="https://dev-www.starbucks.co.kr:7436/common/css/pay-kb.css">
+    <!--<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>-->
+</head>
+<body onload="send()">
+
+<input type="hidden" name="reqTxId" id="reqTxId" value="Starbucks-20250108172737-cjlrv"/>
+<input type="hidden" name="certTxId" id="certTxId" value="BJClp2i07BZFDrPga%25252BItLarEgPK24mAp0ec1y4ViGqw%25253D"/>
+<input type="hidden" name="companyCd" id="companyCd" value="24011"/>
+<input type="hidden" name="callUrl" id="callUrl" value="https://zcert.kbstar.com/quics?page&#x3D;C112181"/>
+<input type="hidden" name="requestType" id="requestType" value="NONE_INFO"/>
+<input type="hidden" name="scheme" id="scheme" value="starbuckskr://authResult?menu&#x3D;kbsign"/>
+
+<main id="wrap" class="KBWrap certifygate">
+      <div id="container">
+        <!-- [S]: Full Popup -->
+        <div class="fullPopupWrapper active"><!-- [D]: 활성화시 active 클래스 추가필요 -->
+          <div class="fullPopupInner">
+            <div class="fullPopupTop">
+              <a href="starbuckskr://common?main=screenClose" class="btnFullPopupClose">닫기</a>
+            </div>
+
+            <div class="fullPopupContents">
+              <div class="fullPopupConBox">
+                <div class="topwrap">
+                  <div class="imgBox"><img src="https://dev-www.starbucks.co.kr:7436/common/img/app/bg_certifygate.png" alt=""></div>
+                  <div class="txtWrap">
+                    <p>본인 인증을 위해 KB스타뱅킹으로 이동해요.<br>
+                      아래 버튼을 눌러 인증해 주세요.</p>
+                  </div>
+                  <div class="btnWrap">
+                    <button type="button" class="btn primary" onclick="send();">KB스타뱅킹으로 인증하기</button> <!-- [D]: KB스타뱅킹 본인인증 프로세스 진입 -->
+                  </div>
+                </div>
+                <div class="popWrapInner">
+                  <a href="starbuckskr://common?main=screenBack" class="btn_link">KB스타뱅킹앱이 없나요? 다른 방식으로 인증해 보세요</a> <!-- [D]: 현재 팝업 닫히고 본인인증 방식 선택 [PAY-004] 노출 -->
+                  <div class="noticeWrap type01">
+                    <strong class="title">문제 발생 시 조치방법</strong>
+                    <ul class="bul-list">
+                      <li>휴대폰에서 <span class="highlight">KB스타뱅킹앱</span>이 설치되어 있는지 확인해 주세요.</li>
+                      <li>문제가 계속된다면, <span class="highlight">KB국민은행 고객센터 1588-1688</span>로 문의해 주세요.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- [E]: Full Popup -->
+      </div>
+
+      <!-- [S]: Floating Button -->
+      <!-- <div class="popWrapInner">
+        <a href="#" class="btn_link">KB스타뱅킹앱이 없나요? 다른 방식으로 인증해 보세요</a>
+        <div class="noticeWrap type01">
+          <strong class="title">문제 발생 시 조치방법</strong>
+          <ul class="bul-list">
+            <li>휴대폰에서 <span class="highlight">KB스타뱅킹앱</span>이 설치되어 있는지 확인해 주세요.</li>
+            <li>문제가 계속된다면, <span class="highlight">KB국민은행 고객센터 1588-1688</span>로 문의해 주세요.</li>
+          </ul>
+        </div>
+      </div> -->
+      <!-- [E]: Floating Button -->
+</main>
+
+
+<script type="text/javascript" src="https://oimg1.kbstar.com/js/common/cert/pcc/KBSignCertIdentity.js" charset="utf-8"></script>
+<script type="text/javascript">
+
+    var reqTxId = document.getElementById('reqTxId').value;
+    var companyCd = document.getElementById('companyCd').value;
+    var certTxId = document.getElementById('certTxId').value;
+    var callUrl = document.getElementById('callUrl').value;
+    var requestType = document.getElementById('requestType').value;
+    var scheme = document.getElementById('scheme').value;
+
+    function send() {
+        var width = 330,
+            height = 480,
+            xPos = (screen.width - width) / 2,
+            yPos = (screen.height - height) / 2,
+            position = "top=" + yPos + ", left=" + xPos,
+            features = position + ", width=320, height=440"
+        ;
+
+        KBSignCertIdentity.requestPopup(reqTxId,companyCd,certTxId,callUrl,callback,requestType);
+    }
+
+    function callback(data){
+        console.log(data);
+        if(data.응답코드 == '000') {
+            var successScheme = scheme + '&result=success&reqTxId='+ reqTxId + '&certTxId=' + certTxId;
+            console.log(scheme);
+            console.log(successScheme);
+            location.replace(successScheme);
+        } else {
+            var failScheme = scheme + '&result=failure&resultCode='+ data.응답코드 + '&resultMessage=' + data.응답메시지;
+            console.log(scheme);
+            console.log(failScheme);
+            location.replace(failScheme);
+        }
+    }
+
+</script>
+</body>
+</html>
